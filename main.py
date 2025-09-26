@@ -7,3 +7,12 @@ conexao = sqlite3.connect("escola.db")
 #Criar o objeto chamado de "Cursor" que será usado para execultar os comandos sql 
 cursor = conexao.cursor()
 
+#Criar uma tabela no banco 
+cursor.execute("""
+ CREATE TABLE IF NOT EXISTS alunos(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    idade INTEGER, 
+    curso TEXT               
+)            
+ """)
